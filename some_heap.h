@@ -1,4 +1,3 @@
-
 #ifndef HEAP_H
 #define HEAP_H
 
@@ -19,18 +18,16 @@ typedef struct {
   int capacity;
 } heap_t;
 
-
-
 heap_t *heap_create(int capacity);
 
-void heap_free(heap_t *heap);
+void heap_free(heap_t *hp);
 
-unsigned int heap_size(heap_t *heap);
+unsigned int heap_size(heap_t *hp);
 
-void heap_insert(heap_t *heap, heap_key_t key, heap_value_t data);
+void heap_insert(heap_t *hp, heap_key_t ky, heap_value_t dt);
 
-heap_value_t heap_remove_min(heap_t *heap);
+heap_value_t heap_remove_min(heap_t *hp);
 
-void heap_print(heap_t *heap);
+void heap_print(heap_t *hp);
 
 #endif

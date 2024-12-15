@@ -15,21 +15,21 @@ unsigned long long rand_between(unsigned long long min,
 }
 
 void test_heap(void) {
-  heap_t *heap = heap_create(200);
+  heap_t *hp = heap_create(200);
   for (heap_key_t ix = 0; ix < 20; ix++) {
-    heap_key_t key = rand_between(0, 1000);
-    heap_insert(heap, key, (heap_value_t)key);
-    heap_print(heap);
+    heap_key_t ky = rand_between(0, 1000);
+    heap_insert(hp, ky, (heap_value_t)ky);
+    heap_print(hp);
   }
   for (int ix = 0; ix < 10; ix++) {
-    heap_key_t key = (heap_key_t)heap_remove_min(heap);
-    printf("Removed %llu\n", key);
-    heap_print(heap);
+    heap_key_t ky = (heap_key_t)heap_remove_min(hp);
+    printf("Removed %llu\n", ky);
+    heap_print(hp);
   }
   exit(0);
 }
+
 int main(int argc, char *argv[]) {
   srand(time(NULL));
-
   test_heap();
 }

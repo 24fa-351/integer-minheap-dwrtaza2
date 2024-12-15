@@ -103,7 +103,7 @@ heap_value_t heap_remove_min(heap_t *heap) {
     return NULL;
   }
 
-  heap_value_t min = heap->data[0].value;
+  heap_value_t min_value = heap->data[0].value;
 
   heap->size--;
 
@@ -113,5 +113,5 @@ heap_value_t heap_remove_min(heap_t *heap) {
   // then bubble it down to its correct position
   heap_bubble_down(heap, 0);
 
-  return min;
+  return min_value;
 }
